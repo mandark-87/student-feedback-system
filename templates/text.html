@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Vertical Line Form</title>
+ <style>
+   .form-container {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+   }
+   .vertical-line {
+     border-left: 2px solid #000;
+     height: 150px;
+   }
+   form {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+   }
+   input[type="text"], input[type="submit"] {
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+   }
+ </style>
+</head>
+<body>
+ <div class="form-container">
+   <div class="vertical-line"></div>
+   <form>
+     <input type="text" placeholder="Enter Name">
+     <input type="submit" value="Submit">
+   </form>
+ </div>
+</body>
+</html>

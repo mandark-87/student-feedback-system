@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="page">
+
+    <div class="container feedback-layout">
+
+        <!-- PAGE TITLE -->
+        <h2>Student Feedback Form</h2>
+
+        <p class="welcome-text">
+            Welcome, <strong>{{ session.regno }}</strong>! Submit your feedback below.
+        </p>
+
+        <!-- FEEDBACK FORM -->
+        <div class="form-card">
+            <form method="post">
+
+                <div class="form-group">
+                    <label for="faculty_id">Select Faculty</label>
+                    <select id="faculty_id" name="faculty_id" required>
+                        <option value="">-- Choose Faculty --</option>
+                        {% for f in faculty %}
+                            <option value="{{ f[0] }}">{{ f[1] }} - {{ f[2] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <select id="rating" name="rating" required>
+                        <option value="">-- Select Rating --</option>
+                        <option value="5">★★★★★ - Excellent</option>
+                        <option value="4">★★★★☆ - Very Good</option>
+                        <option value="3">★★★☆☆ - Good</option>
+                        <option value="2">★★☆☆☆ - Satisfactory</option>
+                        <option value="1">★☆☆☆☆ - Poor</option>
+                    </select>
+                </div>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+
+            {% if message %}
+                <div class="success">{{ message }}</div>
+            {% endif %}
+        </div>
+
+        <!-- FEEDBACK SUMMARY -->
+        {% if feedback_list %}
+        <h2 class="section-title">Your Previous Feedback</h2>
+
+        <div class="table-card">
+            <table>
+                <tr>
+                    <th>Faculty Name</th>
+                    <th>Subject</th>
+                    <th>Rating</th>
+                </tr>
+
+                {% for fb in feedback_list %}
+                <tr>
+                    <td>{{ fb[0] }}</td>
+                    <td>{{ fb[1] }}</td>
+                    <td>
+                        {% for i in range(fb[2]) %}★{% endfor %}
+                        {% for i in range(5 - fb[2]) %}☆{% endfor %}
+                        ({{ fb[2] }}/5)
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+
+        <!-- NAVIGATION -->
+        <div class="nav-links">
+            <a href="{{ url_for('feedback') }}">Refresh</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

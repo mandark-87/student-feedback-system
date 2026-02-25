@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="container">
+
+    <h2>Admin – Feedback Report</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Faculty</th>
+            <th>Subject</th>
+            <th>Rating</th>
+        </tr>
+
+        {% for r in reports %}
+        <tr>
+            <td>{{ r[0] }}</td>
+            <td>{{ r[1] }}</td>
+            <td>{{ r[2] }}</td>
+            <td>{{ r[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+</body>
+</html>
