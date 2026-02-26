@@ -50,6 +50,38 @@ student-feedback-system/
 └── database.db
 
 ---
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home](https://github.com/user-attachments/assets/677dbec9-a146-495e-923a-6b6e4a6a445f)
+
+### 👨‍🎓 Student Registration
+![Register](https://github.com/user-attachments/assets/a64e6a2c-a9ae-41f3-b9ba-6d2dd508e5ab)
+
+### 🔐 Student Login
+![Login](https://github.com/user-attachments/assets/e3c434cc-7b34-417e-b692-a76165d4093b)
+
+### 📝 Feedback Form
+![Feedback](https://github.com/user-attachments/assets/808f6e36-9900-4f68-b0c1-97befc02a207)
+
+### 📊 Analytics Dashboard
+![Analytics](https://github.com/user-attachments/assets/bbfd0c60-a3b2-4570-b5e0-e218a9b12249)
+
+### 📈 Chart Visualization
+![Charts](https://github.com/user-attachments/assets/d3945de5-306b-45a0-8550-4bbf1d26b292)
+
+### 📁 CSV Export
+![CSV](https://github.com/user-attachments/assets/5cc5416c-f0de-40ac-8a8f-1e53ec9f6547)
+
+### 📋 Faculty Table View
+![Table](https://github.com/user-attachments/assets/710c5dc3-e504-4f08-97bd-9641a09b2273)
+
+### ⭐ Overall Rating Display
+![Overall](https://github.com/user-attachments/assets/f72d3ebc-6311-45ac-ac8f-c2f9f73773c1)
+
+---
 
 ## 🔐 Security Implementation
 
