@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <h2>Admin Dashboard</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Total Feedback</h3>
+            <p>{{ total_feedback }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Overall Rating</h3>
+            <p>⭐ {{ overall_avg }}/5</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Faculty</h3>
+            <p>{{ faculty_count }}</p>
+        </div>
+    </div>
+
+    <h3>Faculty Performance</h3>
+
+    <canvas id="ratingChart"></canvas>
+
+    <br>
+
+    <table>
+        <tr>
+            <th>Faculty</th>
+            <th>Subject</th>
+            <th>Total Feedback</th>
+            <th>Average Rating</th>
+        </tr>
+        {% for f in faculty_stats %}
+        <tr>
+            <td>{{ f[0] }}</td>
+            <td>{{ f[1] }}</td>
+            <td>{{ f[2] }}</td>
+            <td>{{ f[3] }}/5</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+<!-- Chart Script -->
+<script>
+    const facultyNames = JSON.parse('{{ faculty_names | default([]) | tojson | safe }}');
+    const facultyRatings = JSON.parse('{{ faculty_ratings | default([]) | tojson | safe }}');
+
+    const ctx = document.getElementById('ratingChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: facultyNames,
+            datasets: [{
+                label: 'Average Rating',
+                data: facultyRatings,
+                backgroundColor: 'rgba(30,60,114,0.7)'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 5
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

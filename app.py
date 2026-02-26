@@ -66,12 +66,55 @@ def init_db():
     )
 
     conn.commit()
-    conn.close()
+    
 
 
 @app.route("/")
 def home():
     return "Student Feedback System Running"
+
+@app.route('/dashboard')
+def dashboard():
+    import sqlite3
+
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+
+    # Total feedback count
+    cursor.execute("SELECT COUNT(*) FROM feedback")
+    total_feedback = cursor.fetchone()[0]
+
+    # Overall average rating
+    cursor.execute("SELECT AVG(rating) FROM feedback")
+    avg = cursor.fetchone()[0]
+    overall_avg = round(avg, 2) if avg else 0
+
+    # Faculty statistics using JOIN
+    cursor.execute("""
+        SELECT f.name, f.subject,
+               COUNT(fe.id),
+               ROUND(AVG(fe.rating), 2)
+        FROM feedback fe
+        JOIN faculty f ON fe.faculty_id = f.id
+        GROUP BY f.id
+    """)
+
+    faculty_stats = cursor.fetchall()
+
+    faculty_names = [f[0] for f in faculty_stats]
+    faculty_ratings = [f[3] for f in faculty_stats]
+
+    conn.close()
+
+    return render_template(
+        "dashboard.html",
+        total_feedback=total_feedback,
+        faculty_count=len(faculty_stats),
+        overall_avg=overall_avg,
+        faculty_stats=faculty_stats,
+        faculty_names=faculty_names,
+        faculty_ratings=faculty_ratings
+    )
 
 @app.route("/admin", methods=["GET", "POST"])
 def admin_login():
