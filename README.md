@@ -54,7 +54,7 @@ student-feedback-system/
 
 ## 📸 Screenshots
 ### Dashboard
-!([Dashboard](https://github.com/user-attachments/assets/4be510ad-5724-4c2a-bbe2-e36ca9eedd71)
+![Dashboard](https://github.com/user-attachments/assets/4be510ad-5724-4c2a-bbe2-e36ca9eedd71)
 
 ### 🏠 Admin - Feedback Report
 ![Home](https://github.com/user-attachments/assets/677dbec9-a146-495e-923a-6b6e4a6a445f)
