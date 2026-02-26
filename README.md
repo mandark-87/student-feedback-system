@@ -60,15 +60,6 @@ student-feedback-system/
 ### 🔐 Admin Login
 ![Login](https://github.com/user-attachments/assets/e3c434cc-7b34-417e-b692-a76165d4093b)
 
-### 📝 Feedback Form
-![Feedback](https://github.com/user-attachments/assets/808f6e36-9900-4f68-b0c1-97befc02a207)
-
-### 📊  Feedback Form Values
-![Analytics](https://github.com/user-attachments/assets/bbfd0c60-a3b2-4570-b5e0-e218a9b12249)
-
-### 📈 Overall Rating Display
-![Charts](https://github.com/user-attachments/assets/d3945de5-306b-45a0-8550-4bbf1d26b292)
-
 ### 📁 Student Login
 ![CSV](https://github.com/user-attachments/assets/5cc5416c-f0de-40ac-8a8f-1e53ec9f6547)
 
@@ -77,6 +68,15 @@ student-feedback-system/
 
 ### ⭐ Student Registration Success message
 ![Overall](https://github.com/user-attachments/assets/f72d3ebc-6311-45ac-ac8f-c2f9f73773c1)
+
+### 📝 Feedback Form
+![Feedback](https://github.com/user-attachments/assets/808f6e36-9900-4f68-b0c1-97befc02a207)
+
+### 📊  Feedback Form Values
+![Analytics](https://github.com/user-attachments/assets/bbfd0c60-a3b2-4570-b5e0-e218a9b12249)
+
+### 📈 Overall Rating Display
+![Charts](https://github.com/user-attachments/assets/d3945de5-306b-45a0-8550-4bbf1d26b292)
 
 ---
 
